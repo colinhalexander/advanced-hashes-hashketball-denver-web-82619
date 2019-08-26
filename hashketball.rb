@@ -268,6 +268,7 @@ end
 def long_name_steals_a_ton?
   most_steals = 0
   steal_name = ""
+  bool = false
   game_hash.each do |location, team_data|
 
     player_array = team_data[:players]
