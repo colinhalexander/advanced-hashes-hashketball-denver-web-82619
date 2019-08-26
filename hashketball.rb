@@ -266,22 +266,22 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-  most_points = 0
-  name = ""
+  most_steals = 0
+  steal_name = ""
   game_hash.each do |location, team_data|
 
     player_array = team_data[:players]
     
-    count = 0
-    while count < player_array.length do
-      if player_array[count][:points] > most_points
-        most_points = player_array[count][:points]
-        name = player_array[count][:name]
+    player_array.each do |player|
+      if player[:points] > most_steals
+        most_steals = player[:points]
+        steal_name = player[:name]
       end
       count += 1
     end
   end
-  name
+  if steal_name = player_with_longest_name return true 
+  end
 end
 
 
