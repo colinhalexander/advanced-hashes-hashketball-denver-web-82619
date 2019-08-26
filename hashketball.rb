@@ -217,7 +217,7 @@ def most_points_scored
     count = 0
     while count < player_array.length do
       if player_array[count][:points] > most_points
-        most_points = player_array[count][:shoe]
+        most_points = player_array[count][:points]
         name = player_array[count][:name]
       end
       count += 1
@@ -237,7 +237,6 @@ def sum_points(location)
   sum  
 end
   
-  
 def winning_team
   home_total = sum_points(:home)
   away_total = sum_points(:away)
@@ -249,8 +248,43 @@ def winning_team
   end
 end
 
+def player_with_longest_name
+  longest_name = ""
+  game_hash.each do |location, team_data|
 
+    player_array = team_data[:players]
+    
+    count = 0
+    while count < player_array.length do
+      if player_array[count][:name].length > longest_name.length
+        longest_name = player_array[count][:name]
+      end
+      count += 1
+    end
+  end
+  longest_name
+end
 
+def long_name_steals_a_ton?
+  most_steals = 0
+  steal_name = ""
+  bool = false
+  game_hash.each do |location, team_data|
+
+    player_array = team_data[:players]
+    
+    player_array.each do |player|
+      if player[:points] > most_steals
+        most_steals = player[:points]
+        steal_name = player[:name]
+      end
+    end
+  end
+  if steal_name = player_with_longest_name 
+    bool = true 
+  end
+  bool
+end
 
 
 
