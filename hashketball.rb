@@ -280,8 +280,10 @@ def long_name_steals_a_ton?
       end
     end
   end
-  if steal_name = player_with_longest_name return true 
+  if steal_name = player_with_longest_name 
+    bool = true 
   end
+  bool
 end
 
 
