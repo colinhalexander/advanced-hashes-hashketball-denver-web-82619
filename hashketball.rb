@@ -217,7 +217,7 @@ def most_points_scored
     count = 0
     while count < player_array.length do
       if player_array[count][:points] > most_points
-        most_points = player_array[count][:shoe]
+        most_points = player_array[count][:points]
         name = player_array[count][:name]
       end
       count += 1
