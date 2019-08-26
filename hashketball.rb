@@ -277,7 +277,6 @@ def long_name_steals_a_ton?
         most_steals = player[:points]
         steal_name = player[:name]
       end
-      count += 1
     end
   end
   if steal_name = player_with_longest_name return true 
