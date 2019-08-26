@@ -265,6 +265,24 @@ def player_with_longest_name
   longest_name
 end
 
+def long_name_steals_a_ton?
+  most_points = 0
+  name = ""
+  game_hash.each do |location, team_data|
+
+    player_array = team_data[:players]
+    
+    count = 0
+    while count < player_array.length do
+      if player_array[count][:points] > most_points
+        most_points = player_array[count][:points]
+        name = player_array[count][:name]
+      end
+      count += 1
+    end
+  end
+  name
+end
 
 
 
