@@ -237,7 +237,6 @@ def sum_points(location)
   sum  
 end
   
-  
 def winning_team
   home_total = sum_points(:home)
   away_total = sum_points(:away)
