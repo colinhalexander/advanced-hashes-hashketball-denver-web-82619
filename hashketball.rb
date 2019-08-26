@@ -256,7 +256,7 @@ def player_with_longest_name
     
     count = 0
     while count < player_array.length do
-      if player_array[count][:name].length > longest_name
+      if player_array[count][:name].length > longest_name.length
         longest_name = player_array[count][:name]
       end
       count += 1
